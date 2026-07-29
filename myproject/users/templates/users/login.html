@@ -1,0 +1,15 @@
+<! -- prettier ignore -->
+{% extends 'layout.html' %} {% comment %}
+<! -- prettier ignore -->
+{% endcomment %} {% block title %} User Login{% endblock title %}
+
+<! -- prettier ignore -->
+{% block content %}
+<section>
+  <h1>User Login!!</h1>
+  <form action="/users/login/" method="post">
+    {% csrf_token %} {{form}}
+    <button>Submit</button>
+  </form>
+</section>
+{% endblock content %}

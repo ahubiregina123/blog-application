@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+<! -- prettier ignore -->
+
+{% block title %} Home {% endblock title %}
+
+<! -- prettier ignore -->
+
+{% block content %}
+<section>
+  <div class="container">
+    <p class="intro-paragraph">A JOURNAL OF IDEAS</p>
+    <div>
+      <h1>Words worth</h1>
+      <h1 style="color: #c8aa78">reading slowly.</h1>
+    </div>
+    <p class="intro-text">
+      Essays on design, craft and slow accumulation of taste. Published when
+      ready, not on a schedule.
+    </p>
+    <div class="intro-btn">
+      <a class="browse-all-posts-btn" href="{% url 'posts:list' %}">
+        Browse all posts
+      </a>
+      <a class="start-writing-btn" href="{% url 'posts:new-post' %}"
+        >Start writing</a
+      >
+    </div>
+  </div>
+  <hr class="divider" />
+</section>
+<section class="container">
+  <p class="featured">FEATURED</p>
+  <div class="row">
+    <img class="col-2" src="{{post.banner.url}}" alt="image" />
+    <div class="col-2 post-content">
+      <h2>
+        <a class="post-title" href="{% url 'posts:page' post.slug %}">
+          {{post.title}}</a
+        >
+      </h2>
+      <p>{{post.body}}</p>
+      <p>{{ post.author}} . {{post.date}}</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <hr class="divider" />
+  <div class="footer-container">
+    <p class="label-footer">Longform</p>
+    <p class="copyright">© 2026. Crafted with intention</p>
+  </div>
+</footer>
+{% endblock content %}

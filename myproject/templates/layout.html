@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar-fixed">
+      <div>
+        <h2 class="label">Longform</h2>
+        <div class="intro-page">
+          <a href="/">Home</a>
+          <a href="{% url 'posts:list' %}">Posts</a>
+          <a href="/about">About</a>
+        </div>
+        {% if user.is_authenticated %} |
+        <div>
+          <a href="{% url 'posts:new-post' %}"
+            ><span role="img" aria-label="New Post" title="New Post">
+              🆕
+            </span></a
+          >
+          <form action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
+            <button aria-label="User Logout" title="User Logout">👋</button>
+          </form>
+        </div>
+        {% else%}
+        <div class="out-user">
+          <a class="login" href="{% url 'users:login' %}">Log in</a>
+          <a class="get-started-btn" href="{% url 'users:register' %}">
+            Get started
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      <hr class="divider" />
+    </nav>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>

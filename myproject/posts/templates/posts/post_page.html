@@ -1,0 +1,14 @@
+<! -- prettier ignore -->
+{% extends 'layout.html' %} {% comment %}
+<! -- prettier ignore -->
+{% endcomment %} {% block title %} {{post.title}} {% endblock title %}
+
+<! -- prettier ignore -->
+{% block content %}
+<section>
+  <img class="banner" src="{{post.banner.url}}" alt="image" />
+  <h2>{{post.title}}</h2>
+  <p>{{post.date}}</p>
+  <p>{{post.body}}</p>
+</section>
+{% endblock content %}
