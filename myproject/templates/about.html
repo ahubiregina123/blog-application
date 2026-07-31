@@ -5,6 +5,70 @@
 <! -- prettier ignore -->
 
 {%block content %}
-<h1>About</h1>
-<p>Check out my <a href="/"> Home</a> Page!</p>
+<section class="container">
+  <p class="intro-paragraph">ABOUT</p>
+  <div class="row">
+    <div class="about-header">
+      <h1>A Publication for</h1>
+      <h1 style="color: #c8aa78">careful readers.</h1>
+    </div>
+    <div class="about-intro">
+      <p>
+        Longform was founded in 2024 with a simple premise: there is still an
+        appetite for writing that asks something of the reader. We publish
+        essays on design, craft, technology and the slow art of paying
+        attention.
+      </p>
+      <p>
+        We are not interested in content. We are interested in ideas - formed
+        slowly, expressed precisely and allowed to sit with you for a while.
+      </p>
+    </div>
+  </div>
+  <hr class="divider" />
+</section>
+<section class="container">
+  <p class="title-text">WHAT WE BELIEVE</p>
+  <div class="row">
+    <div class="what-we-believe-col">
+      <hr class="about-divider" />
+      <p class="what-we-believe-title">Depth over frequency</p>
+      <p class="what-we-believe-text">
+        We publish when a piece is ready, not when the calendar says it is time.
+        Every essay is edited for clarity, argument and rhythm.
+      </p>
+    </div>
+    <div class="what-we-believe-col">
+      <hr class="about-divider" />
+      <p class="what-we-believe-title">No engagement traps</p>
+      <p class="what-we-believe-text">
+        No comment counts, clap buttons, or social metric. reading is enough. We
+        trust you to decide what is worth returning to.
+      </p>
+    </div>
+    <div class="what-we-believe-col">
+      <hr class="about-divider" />
+      <p class="what-we-believe-title">Long-term thinking</p>
+      <p class="what-we-believe-text">
+        We write about things that will still matter in ten years. Trend pieces
+        and new commmentary are a form of pollution we choose not to produce.
+      </p>
+    </div>
+  </div>
+  <hr class="divider" />
+</section>
+<section class="container">
+  <div class="row">
+    <div class="want-to-contribute-col">
+      <h2>Want to contribute?</h2>
+      <p>
+        We read every submission. We reply to ones we think have something to
+        say.
+      </p>
+    </div>
+    <div class="want-to-contribute-col-btn">
+      <a href="{% url 'users:login' %}">Create an account</a>
+    </div>
+  </div>
+</section>
 {% endblock content %}

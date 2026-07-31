@@ -29,9 +29,11 @@
   <hr class="divider" />
 </section>
 <section class="container">
-  <p class="featured">FEATURED</p>
+  <p class="title-text">FEATURED</p>
   <div class="row">
-    <img class="col-2" src="{{post.banner.url}}" alt="image" />
+    <div class="col-2 ">
+      <img src="{{post.banner.url}}" alt="image" />
+    </div>
     <div class="col-2 post-content">
       <h2>
         <a class="post-title" href="{% url 'posts:page' post.slug %}">
@@ -43,11 +45,5 @@
     </div>
   </div>
 </section>
-<footer>
-  <hr class="divider" />
-  <div class="footer-container">
-    <p class="label-footer">Longform</p>
-    <p class="copyright">© 2026. Crafted with intention</p>
-  </div>
-</footer>
+
 {% endblock content %}

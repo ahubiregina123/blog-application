@@ -5,10 +5,20 @@
 
 <! -- prettier ignore -->
 {% block content %}
-<section>
-  <img class="banner" src="{{post.banner.url}}" alt="image" />
-  <h2>{{post.title}}</h2>
-  <p>{{post.date}}</p>
-  <p>{{post.body}}</p>
+<section class="container">
+  <div class="post-page-info">
+    <h2 class="post-title">{{post.title}}</h2>
+    <div>
+      <p style="color: #6b6b6b; font-size: 12px">{{post.author}}</p>
+      <p style="color: #6b6b6b; font-size: 12px">{{post.date}}</p>
+    </div>
+  </div>
+  <hr class="divider" />
+  <div class="post-page-info">
+    <img class="banner" src="{{post.banner.url}}" alt="image" />
+    <p style="color: #6b6b6b; font-size: 14px; line-height: 20px">
+      {{post.body}}
+    </p>
+  </div>
 </section>
 {% endblock content %}

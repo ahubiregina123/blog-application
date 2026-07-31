@@ -14,7 +14,8 @@ def homepage(request):
 
 def about(request):
     # return HttpResponse('This is My About page !')
-    return render(request, 'about.html') 
+    posts = Post.objects.all().order_by('-date')
+    return render(request, 'about.html', {'posts' : posts}) 
 
 def contact(request):
     return render(request,'contact.html')

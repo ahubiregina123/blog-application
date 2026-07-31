@@ -5,14 +5,28 @@
 
 <! -- prettier ignore -->
 {% block content %}
-<section>
-  <h1>Posts</h1>
+<section class="container">
+  <p class="intro-paragraph">ALL POSTS</p>
+  <hr class="divider" />
+</section>
+<section class="container">
   {% for post in posts %}
-  <h2>
-    <a href="{% url 'posts:page' post.slug %}"> {{post.title}}</a>
-  </h2>
-  <p>{{post.date}} by {{ post.author}}</p>
-  <p>{{post.body}}</p>
+  <div class="row">
+    <div class="post-info">
+      <h2>
+        <a class="post-title" href="{% url 'posts:page' post.slug %}">
+          {{post.title}}</a
+        >
+      </h2>
+      <div class="post-content">
+        <p>{{post.body}}</p>
+        <p>{{post.author}} by {{ post.date}}</p>
+      </div>
+    </div>
+    <div class="post-img">
+      <img class="banner" src="{{post.banner.url}}" alt="image" />
+    </div>
+  </div>
   {% endfor %}
 </section>
 {% endblock content %}

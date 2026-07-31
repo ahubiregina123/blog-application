@@ -36,9 +36,51 @@
           </a>
         </div>
         {% endif %}
+        <img class="menu-icon" src="../static/images/menu_icon.png" alt="" />
       </div>
       <hr class="divider" />
     </nav>
-    <main>{% block content %} {% endblock %}</main>
+    {% comment %}
+    <div class="sidebar">
+      <div class="intro-sidebar">
+        <a href="/">Home</a>
+        <a href="{% url 'posts:list' %}"> Posts</a>
+        <a href="/about">About</a>
+        <hr class="divider" />
+      </div>
+      {% if user.is_authenticated %} |
+      <div class="in-user-sidebar">
+        <a href="{% url 'posts:new-post' %}"
+          ><span role="img" aria-label="New Post" title="New Post">
+            🆕
+          </span></a
+        >
+        <form action="{% url 'users:logout' %}" method="post">
+          {% csrf_token %}
+          <button aria-label="User Logout" title="User Logout">👋</button>
+        </form>
+      </div>
+      {% else%}
+      <div class="out-user-sidebar">
+        <a class="login-sidebar" href="{% url 'users:login' %}">Log in</a>
+        <a class="get-started-btn-sidebar" href="{% url 'users:register' %}">
+          Get started
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    {% endcomment %} {% comment %}
+    <hr class="divider" />
+    {% endcomment %}
+    <main>
+      {% block content %} {% endblock %}
+      <footer>
+        <hr class="divider" />
+        <div class="footer-container">
+          <p class="label-footer">Longform</p>
+          <p class="copyright">© 2026. Crafted with intention</p>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
