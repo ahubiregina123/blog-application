@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <script src="{% static 'javascript/script.js'%}" defer></script>
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body>
@@ -36,11 +37,17 @@
           </a>
         </div>
         {% endif %}
-        <img class="menu-icon" src="../static/images/menu_icon.png" alt="" />
+        <img
+          class="menu-icon"
+          id="menu-icon"
+          src="{% static 'images/menu_icon.png'%}"
+          alt=""
+        />
+        <span class="closing-icon">X</span>
       </div>
       <hr class="divider" />
     </nav>
-    {% comment %}
+    {% comment %} side bar {% endcomment %}
     <div class="sidebar">
       <div class="intro-sidebar">
         <a href="/">Home</a>
@@ -69,9 +76,7 @@
       </div>
       {% endif %}
     </div>
-    {% endcomment %} {% comment %}
     <hr class="divider" />
-    {% endcomment %}
     <main>
       {% block content %} {% endblock %}
       <footer>

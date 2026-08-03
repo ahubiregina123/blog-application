@@ -213,9 +213,30 @@ nav div {
   display: none;
 }
 
+.hide-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.show-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: block;
+}
+
+.closing-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
+
 /* side bar */
 .sidebar {
-  display: block;
+  display: none;
   padding: 5px 15px;
   /* background-color: pink; */
 }
@@ -248,6 +269,10 @@ nav div {
   color: #6b6b6b;
   text-decoration: none;
   font-weight: 500;
+}
+
+.login-sidebar:hover {
+  color: white;
 }
 
 .get-started-btn-sidebar {
@@ -381,6 +406,24 @@ nav div {
     display: none;
   }
 
+  /* .sidebar {
+    display: block;
+  } */
+
+  .hide-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .show-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: block;
+  }
+
   .intro-page {
     display: none;
   }
@@ -390,7 +433,7 @@ nav div {
   }
 
   .container {
-    padding: 25px 20px;
+    padding: 30px 20px;
   }
 
   .intro-text {
